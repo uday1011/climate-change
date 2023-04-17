@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <style>
+
+    .home {
+      padding: 3px 40px;
+    }
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      margin: 0%;
+    }
+
+    header {
+      padding-left: 17px;
+      position: static;
+      background-attachment: fixed;
+    }
+
+    .right img {
+
+      padding: 0px;
+      float: right;
+      overflow: auto;
+    }
+
+    .navbar {
+      overflow: hidden;
+      background-color: rgb(15, 160, 192);
+      background-attachment: fixed;
+    }
+
+    .navbar a {
+      float: left;
+      font-size: 16px;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+
+    .dropdown {
+      float: left;
+      overflow: hidden;
+    }
+
+    .dropdown .dropbtn {
+      font-size: 16px;
+      border: none;
+      outline: none;
+      color: white;
+      padding: 14px 16px;
+      background-color: inherit;
+      font-family: inherit;
+      margin: 0;
+    }
+
+    .navbar a:hover,
+    .dropdown:hover .dropbtn {
+      background-color: red;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+    }
+
+    .dropdown-content a {
+      float: none;
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      text-align: left;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #ddd;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .home {
+      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+      text-decoration: solid;
+      font-size: large;
+      line-height: 1.8em;
+    }
+
+    .Search {
+      text-align: center;
+      float: right;
+      color: blue;
+      padding: 12px 13px;
+    }
+
+    .navBar input {
+      border: 2px solid black;
+      border-radius: 14px;
+      padding: 4px 17px;
+      width: 20px;
+    }
+
+    .sticky {
+      position: fixed;
+      top: 0;
+      width: 100%;
+    }
+
+    .sticky+.content {
+      padding-top: 60px;
+    }
+
+    .footbar {
+      overflow: hidden;
+      background-color: #053877;
+      background-attachment: fixed;
+    }
+
+    .footbar a {
+      background-color: rgb(255, 255, 255);
+      padding: 10px 15px;
+      border-radius: 30px;
+      margin: 5px 10px;
+      text-decoration: none;
+    }
+
+    .footbar a:hover {
+      background-color: rgb(253, 0, 0);
+    }
+
+    * {
+      box-sizing: border-box
+    }
+
+    body {
+      font-family: Verdana, sans-serif;
+      margin: 0
+    }
+
+    .mySlides {
+      display: none
+    }
+
+    img {
+      vertical-align: middle;
+    }
+
+    /* Slideshow container */
+    .slideshow-container {
+      background: white;
+      max-width: 1000px;
+      margin-top: 60px;
+      margin-left: 160px;
+    }
+
+
+    /* Caption text */
+    .text {
+      color: #f2f2f2;
+      font-size: 15px;
+      padding: 8px 12px;
+      position: absolute;
+      bottom: 8px;
+      width: 100%;
+      text-align: center;
+    }
+
+    /* Number text (1/3 etc) */
+    .numbertext {
+      color: #f2f2f2;
+      font-size: 12px;
+      padding: 8px 12px;
+      position: absolute;
+      top: 0;
+    }
+
+    /* The dots/bullets/indicators */
+    .dot {
+      cursor: pointer;
+      height: 15px;
+      width: 15px;
+      margin: 0 2px;
+      background-color: #bbb;
+      border-radius: 50%;
+      display: inline-block;
+      transition: background-color 0.6s ease;
+    }
+
+    .active,
+    .dot:hover {
+      background-color: #717171;
+    }
+
+    /* Fading animation */
+    .fade {
+      animation-name: fade;
+      animation-duration: 1.5s;
+    }
+
+   
+
+    /* On smaller screens, decrease text size */
+    @media only screen and (max-width: 300px) {
+      .prev,
+      .next,
+      .text {
+        font-size: 11px
+      }
+    }
+
+
+
+    .hidden {
+      margin-top: 12px;
+      max-width: 59%;
+      margin: auto;
+      box-shadow: 0px 0px 3px gray;
+      position: relative;
+    }
+
+    .sold {
+      position: absolute;
+      transition: 30s;
+    }
+
+
+    .btn {
+      text-align: center;
+      /* justify-content: end; */
+      margin-top: auto;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="right">
+      <!-- <img class="img" src="/logo.png" alt="This is LOGO" width="60vw" height="50vh"> -->
+      <h1>Earth climate changes</h1>
+    </div>
+  </header>
+
+  <div id="navbar" class="navbar">
+    <a class="active" href="/index.html">Home</a>
+    <!-- <a href="#about">Solutions</a> -->
+    <div class="dropdown">
+      <button class="dropbtn">Solutions
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+        <a target="_self" href="/agriculture.html">Agriculture</a>
+        <a href="/greentech.html">Green technology</a>
+        <a href="/other solutions.html">Other Solutions</a>
+      </div>
+    </div>
+    <div class="dropdown">
+      <button class="dropbtn">About
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+        <a href="/effects.html">Effects</a>
+        <a href="/causes.html">Causes</a>
+      </div>
+    </div>
+  </div>
+  <br>
+  <main>
+    <div class="hidden">
+      <img class="sold" src="/drysoil.jpg" alt="wp" height="400px" width="800px">
+      <img class="sold" src="/water.jpg" alt="wp2" height="400px" width="800px">
+      <img class="sold" src="/icemelting.jpg" alt="wp3" height="400px" width="800px">
+      <img class="sold" src="/burnforest.jpg" alt="wp3" height="400px" width="800px">
+    </div>
+  </main>
+                  
+  <br>
+  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+  
+ 
+<div class="home">
+   
+  <p>Climate change refers to the long-term warming of the planet due to the increase in greenhouse gases in the Earth's atmosphere. These gases, such as carbon dioxide, methane, and water vapor, trap heat from the sun, causing the Earth's surface temperature to rise.</p>
+
+  <p>climate change is a complex problem that is caused by many factors, including human activities such as the burning of fossil fuels, deforestation, and agricultural practices. 
+    The Earth's climate has always changed, but the rate of warming in recent decades has been much faster than in the past. This rapid warming is largely due to the increase in greenhouse gases in the atmosphere, which trap heat from the sun and cause the Earth's surface temperature to rise.
+T   he consequences of climate change are widespread and include more frequent and severe heatwaves, droughts, and storms, as well as rising sea levels and the loss of biodiversity. These changes can have serious impacts on human health, food production, and the environment.
+    To address climate change, it is important to reduce our greenhouse gas emissions and adopt sustainable practices. This may involve transitioning to renewable energy sources, improving energy efficiency, protecting and restoring forests, and adopting sustainable agricultural practices. It may also involve adapting to the impacts of climate change that are already happening, such as by building infrastructure that is more resilient to extreme weather events.
+  </p>
+   
+  <p>
+    There are several factors that contribute to climate change, including:
+    <br>
+    <b>The burning of fossil fuels:</b><br> The burning of coal, oil, and natural gas releases large amounts of carbon dioxide into the atmosphere, which is a major contributor to global warming.
+    <br>
+    <b>Deforestation:</b><br> Trees absorb carbon dioxide from the atmosphere, so cutting down forests reduces this natural sink for the greenhouse gas. Deforestation also contributes to climate change through the release of carbon stored in the trees and soil.
+    <br>
+    <b>Agricultural practices:</b><br> The production of meat, especially beef and lamb, is a significant source of methane, a potent greenhouse gas. In addition, the use of synthetic fertilizers in agriculture releases nitrous oxide, another potent greenhouse gas.
+    <br>
+    <b>Land use changes:</b><br> Urbanization and the conversion of land for agricultural use can also contribute to climate change.
+    <br>
+    <br>
+    The consequences of climate change are widespread and include more frequent and severe heatwaves, droughts, and storms, as well as rising sea levels and the loss of biodiversity. To address climate change, it is important to reduce our greenhouse gas emissions and adopt sustainable practices.
+  </p>
+  
+</div>
+  
+  <hr>
+  
+  <footer>
+    <div class="footbar">
+      <br><br>
+      <center>
+        <a href="#" class="fa fa-linkedin"> Linkdin</a>
+        <a href="#" class="fa fa-youtube">Youtube</a>
+        <a href="#" class="fa fa-instagram">Instagram</a>
+      </center>
+      <br><br>
+    </div>
+  </footer>
+</body>
+
+</html>
